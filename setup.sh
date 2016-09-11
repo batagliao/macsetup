@@ -15,13 +15,12 @@ else
 fi
 brew doctor
 
-#TODO: install cask
-#install brews and casks
-
 brew install zsh zsh-completions
 
 #set zsh as shell
-#configure .dot files
+chsh -s $(which zsh)
+
+#TODO: configure .dot files
 
 brew install mono
 brew install openssl
