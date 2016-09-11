@@ -13,6 +13,7 @@ else
   brew update
   brew upgrade
 fi
+sudo xcodebuild -license
 brew doctor
 
 brew install zsh zsh-completions
