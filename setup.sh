@@ -50,7 +50,7 @@ brew cask install android-studio
 brew cask install parallels-desktop
 brew cask install whatsapp
 brew cask install send-to-kindle
-brew cask install microsoft-office
+#brew cask install microsoft-office
 brew cask install telegram
 brew cask install ccleaner
 brew cask install dotnet
