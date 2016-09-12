@@ -11,10 +11,13 @@ if test ! $(which brew); then
 else
   echo "Updating Homebrew ..."
   brew update
+  wait
   brew upgrade
+  wait
 fi
 sudo xcodebuild -license
 brew doctor
+wait
 
 brew install zsh zsh-completions
 
