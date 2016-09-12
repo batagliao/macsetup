@@ -41,7 +41,7 @@ brew cask install google-chrome
 brew cask install gimp
 brew cask install skype
 brew cask install spotify
-brew cask install gvisual-studio-code
+brew cask install visual-studio-code
 brew cask install flux
 brew cask install teamviewer
 brew cask install java
