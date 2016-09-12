@@ -16,6 +16,7 @@ else
   wait
 fi
 sudo xcodebuild -license
+wait
 brew doctor
 wait
 
