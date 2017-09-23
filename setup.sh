@@ -37,22 +37,28 @@ ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/
 brew install wget
 
 brew cask install iterm2
+brew cask install spectacle
+brew cask install mysqlworkbench
+brew cask install dbeaver
+brew cask install yummy-ftp
 brew cask install google-chrome
+brew cask install firefox
 brew cask install gimp
 brew cask install skype
 brew cask install spotify
 brew cask install visual-studio-code
-brew cask install flux
-brew cask install teamviewer
+# brew cask install flux
+# brew cask install teamviewer
 brew cask install java
-brew cask install filezilla
+# brew cask install filezilla
 brew cask install android-studio
 brew cask install parallels-desktop
 brew cask install whatsapp
 brew cask install send-to-kindle
+brew cask install intellij-idea-ce
 #brew cask install microsoft-office
-brew cask install telegram
-brew cask install ccleaner
+# brew cask install telegram
+# brew cask install ccleaner
 brew cask install dotnet
 #Zsh users may need to symlink the dotnet binary:
 ln -s /usr/local/share/dotnet/dotnet /usr/local/bin
@@ -71,7 +77,6 @@ brew cask install suspicious-package
 
 #brew cleanup
 brew cleanup
-brew cask cleanup
 brew linkapps
 
 
@@ -124,7 +129,7 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 #defaults write com.apple.dock no-glass -bool true
 
 # Dock: position the Dock on the left
-#defaults write com.apple.dock orientation left
+defaults write com.apple.dock orientation left
 
 # Dock: set the icon size of Dock items to 36 pixels
 defaults write com.apple.dock tilesize -int 36
@@ -256,6 +261,6 @@ defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 # Misc: disable auto-correct
 #defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
-for app in "Dashboard" "Dock" "Finder" "SystemUIServer" "Terminal" "iTunes"; do
+for app in "Dashboard" "Dock" "Finder" "SystemUIServer" "iTunes"; do
     killall "$app" > /dev/null 2>&1
 done
