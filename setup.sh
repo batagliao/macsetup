@@ -1,5 +1,13 @@
 #!/bin/sh
 
+function vscode(){
+    CONTENTS="/Applications/Visual Studio Code.app/Contents"
+    ELECTRON="$CONTENTS/MacOS/Electron"
+    CLI="$CONTENTS/Resources/app/out/cli.js"
+    ELECTRON_RUN_AS_NODE=1 "$ELECTRON" "$CLI" "$1"
+    exit $?
+}
+
 if test ! $(which brew); then
   echo "Installing Xcode ..."
   xcode-select --install
@@ -35,23 +43,43 @@ ln -s /usr/local/opt/openssl/lib/libcrypto.1.0.0.dylib /usr/local/lib/
 ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/
 
 brew install wget
+brew install nodejs
 
 brew cask install iterm2
 brew cask install spectacle
 brew cask install mysqlworkbench
 brew cask install dbeaver
-brew cask install yummy-ftp
+#brew cask install yummy-ftp
 brew cask install google-chrome
 brew cask install firefox
 brew cask install gimp
 brew cask install skype
 brew cask install spotify
 brew cask install visual-studio-code
+
+# installing extensions for vs code
+vscode --install-extension donjayamanne.python
+vscode --install-extension eg2.tslint
+vscode --install-extension fknop.vscode-npm
+vscode --install-extension k--kato.intellij-idea-keybindings
+vscode --install-extension leizongmin.node-module-intellisense
+vscode --install-extension miramac.vscode-exec-node
+# vscode --install-extension ms-mssql.mssql
+vscode --install-extension ms-vscode.cpptools
+vscode --install-extension ms-vscode.csharp
+vscode --install-extension msjsdiag.debugger-for-chrome
+vscode --install-extension robertohuertasm.vscode-icons
+vscode --install-extension steoates.autoimport
+vscode --install-extension tungvn.wordpress-snippet
+vscode --install-extension wcwhitehead.bootstrap-3-snippets
+vscode --install-extension zhuangtongfa.Material-theme
+
+
 # brew cask install flux
 # brew cask install teamviewer
 brew cask install java
-# brew cask install filezilla
-brew cask install android-studio
+brew cask install filezilla
+#brew cask install android-studio
 brew cask install parallels-desktop
 brew cask install whatsapp
 brew cask install send-to-kindle
