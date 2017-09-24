@@ -45,6 +45,10 @@ ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/
 brew install wget
 brew install nodejs
 
+# install fonts used in term
+brew cask install font-inconsolata-for-powerline
+brew cask install font-inconsolata-g-for-powerline
+
 brew cask install iterm2
 brew cask install spectacle
 brew cask install mysqlworkbench
@@ -90,6 +94,10 @@ brew cask install intellij-idea-ce
 brew cask install dotnet
 #Zsh users may need to symlink the dotnet binary:
 ln -s /usr/local/share/dotnet/dotnet /usr/local/bin
+
+
+brew cask install r-app
+brew cask install rstudio
 
 ###Quick look plugins
 #Some plugins to enable different files to work with Mac Quicklook. Includes features like syntax highlighting, markdown rendering, preview of jsons, patch files, csv, zip files etc.
