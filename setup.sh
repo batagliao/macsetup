@@ -23,17 +23,27 @@ else
   brew upgrade
   wait
 fi
+
 sudo xcodebuild -license
 wait
 brew doctor
 wait
 
+cd ~/
+git clone https://github.com/batagliao/macsetup.git
+
 brew install zsh zsh-completions
+wait
 
 #set zsh as shell
 chsh -s $(which zsh)
 
-#TODO: configure .dot files
+# configure .dot files
+cp ~/macsetup/dotfiles/.z* .
+
+#install zprezto
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+wait
 
 brew install mono
 brew install openssl
@@ -50,6 +60,14 @@ brew cask install font-inconsolata-for-powerline
 brew cask install font-inconsolata-g-for-powerline
 
 brew cask install iterm2
+
+# configure iterm2
+# Specify the preferences directory
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/macsetup/dotfiles/iterm2"
+# Tell iTerm2 to use the custom preferences in the directory
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+wait
+
 brew cask install spectacle
 brew cask install mysqlworkbench
 brew cask install dbeaver
