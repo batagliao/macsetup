@@ -56,6 +56,7 @@ brew install wget
 brew install nodejs
 
 # install fonts used in term
+brew tap caskroom/fonts 
 brew cask install font-inconsolata-for-powerline
 brew cask install font-inconsolata-g-for-powerline
 
@@ -70,7 +71,7 @@ wait
 
 brew cask install spectacle
 brew cask install mysqlworkbench
-brew cask install dbeaver
+#brew cask install dbeaver-community
 #brew cask install yummy-ftp
 brew cask install google-chrome
 brew cask install firefox
@@ -79,22 +80,21 @@ brew cask install skype
 brew cask install spotify
 brew cask install visual-studio-code
 
-# installing extensions for vs code
-vscode --install-extension donjayamanne.python
-vscode --install-extension eg2.tslint
-vscode --install-extension fknop.vscode-npm
-vscode --install-extension k--kato.intellij-idea-keybindings
-vscode --install-extension leizongmin.node-module-intellisense
-vscode --install-extension miramac.vscode-exec-node
-# vscode --install-extension ms-mssql.mssql
-vscode --install-extension ms-vscode.cpptools
-vscode --install-extension ms-vscode.csharp
-vscode --install-extension msjsdiag.debugger-for-chrome
-vscode --install-extension robertohuertasm.vscode-icons
-vscode --install-extension steoates.autoimport
-vscode --install-extension tungvn.wordpress-snippet
-vscode --install-extension wcwhitehead.bootstrap-3-snippets
-vscode --install-extension zhuangtongfa.Material-theme
+# # installing extensions for vs code
+# vscode --install-extension donjayamanne.python
+# vscode --install-extension eg2.tslint
+# vscode --install-extension fknop.vscode-npm
+# vscode --install-extension k--kato.intellij-idea-keybindings
+# vscode --install-extension leizongmin.node-module-intellisense
+# vscode --install-extension miramac.vscode-exec-node
+# vscode --install-extension ms-vscode.cpptools
+# vscode --install-extension ms-vscode.csharp
+# vscode --install-extension msjsdiag.debugger-for-chrome
+# vscode --install-extension robertohuertasm.vscode-icons
+# vscode --install-extension steoates.autoimport
+# vscode --install-extension tungvn.wordpress-snippet
+# vscode --install-extension wcwhitehead.bootstrap-3-snippets
+# vscode --install-extension zhuangtongfa.Material-theme
 
 
 # brew cask install flux
