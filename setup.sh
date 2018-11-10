@@ -8,6 +8,7 @@ function vscode(){
     exit $?
 }
 
+# detect if homebrew is installed to install or update
 if test ! $(which brew); then
   echo "Installing Xcode ..."
   xcode-select --install
@@ -53,7 +54,20 @@ ln -s /usr/local/opt/openssl/lib/libcrypto.1.0.0.dylib /usr/local/lib/
 ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/
 
 brew install wget
-brew install nodejs
+
+
+# install Antigen - zsh plugin manager
+curl -L git.io/antigen > $HOME/antigen.zsh
+source $HOME/antigen.zsh
+
+# install nvm - node version manager
+# curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+# install nvm using Antigen 
+antigen bundle lukechilds/zsh-nvm
+antigen apply
+
+source $HOME/.zshrc
+
 
 # install fonts used in term
 brew tap caskroom/fonts 
@@ -69,16 +83,65 @@ defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/macsetup
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 wait
 
+### utitlities
+# brew cask install teamviewer
 brew cask install spectacle
-brew cask install mysqlworkbench
-#brew cask install dbeaver-community
-#brew cask install yummy-ftp
-brew cask install google-chrome
-brew cask install firefox
+brew cask install send-to-kindle
+brew cask install android-file-transfer
+brew cask install etcher
+brew cask install sensiblesidebuttons
+brew cask install smcfancontrol
+
+### image editing
 brew cask install gimp
-brew cask install skype
+
+
+### ftp
+brew cask install filezilla
+#brew cask install yummy-ftp
+
+
+### communication
+#brew cask install skype
+brew cask install whatsapp
+brew cask install telegram
+brew cask install slack
+
+
+### music
 brew cask install spotify
+
+
+### browsers
+brew cask install google-chrome
+brew cask install vivaldi
+#brew cask install firefox
+
+
+### programming languages
+# install latest node
+nvm install node
+# brew cask install java
+brew cask install java8
+brew cask install dotnet
+#Zsh users may need to symlink the dotnet binary:
+ln -s /usr/local/share/dotnet/dotnet /usr/local/bin
+# brew cask install r-app
+brew install golang
+
+
+### programming tools
+brew cask install mysqlworkbench
+brew cask install dbeaver-community
 brew cask install visual-studio-code
+#brew cask install android-studio
+brew cask install intellij-idea-ce
+# brew cask install rstudio
+brew cask install teamsql
+brew cask install eclipse-jee
+brew cask install postman
+brew cask install docker
+
 
 # # installing extensions for vs code
 # vscode --install-extension donjayamanne.python
@@ -95,29 +158,22 @@ brew cask install visual-studio-code
 # vscode --install-extension tungvn.wordpress-snippet
 # vscode --install-extension wcwhitehead.bootstrap-3-snippets
 # vscode --install-extension zhuangtongfa.Material-theme
+# vscode --install-extension mrmlnc.vscode-apache
+# vscode --install-extension t-sauer.autolinting-for-javascript
+# vscode --install-extension bungcip.better-toml
+# vscode --install-extension pivotal.vscode-manifest-yaml
+# vscode --install-extension peterjausovec.vscode-docker
+# vscode --install-extension dbaeumer.vscode-eslint
+# vscode --install-extension donjayamanne.githistory
+# vscode --install-extension ms-vscode.go
+# vscode --install-extension vscjava.vscode-java-pack
+# vscode --install-extension redhat.java
+# vscode --install-extension vscjava.vscode-maven
+# vscode --install-extension christian-kohler.path-intellisense
+# vscode --install-extension ms-python.python
 
 
-# brew cask install flux
-# brew cask install teamviewer
-brew cask install java
-brew cask install filezilla
-#brew cask install android-studio
-brew cask install parallels-desktop
-brew cask install whatsapp
-brew cask install send-to-kindle
-brew cask install intellij-idea-ce
-#brew cask install microsoft-office
-# brew cask install telegram
-# brew cask install ccleaner
-brew cask install dotnet
-#Zsh users may need to symlink the dotnet binary:
-ln -s /usr/local/share/dotnet/dotnet /usr/local/bin
-
-
-brew cask install r-app
-brew cask install rstudio
-
-###Quick look plugins
+### Quick look plugins
 #Some plugins to enable different files to work with Mac Quicklook. Includes features like syntax highlighting, markdown rendering, preview of jsons, patch files, csv, zip files etc.
 brew cask install qlcolorcode
 brew cask install qlstephen
@@ -129,14 +185,13 @@ brew cask install betterzipql
 brew cask install webpquicklook
 brew cask install suspicious-package
 
-#brew cleanup
+
+### brew cleanup
 brew cleanup
 brew linkapps
 
 
-
-
-#mac defaults
+### mac defaults
 # General UI/UX
 # ----------------------------------------------------------------------
 
